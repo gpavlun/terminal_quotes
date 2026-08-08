@@ -1,4 +1,9 @@
 import random
+from pathlib import Path
+# get directory where this script is
+BASE_DIR = Path(__file__).resolve().parent
+QUOTE_FILE = BASE_DIR / "quotes.txt"
+INDEX_FILE = BASE_DIR / "indices.idx"
 
 def random_line(quote_file, index_file):
     with open(index_file, "rb") as i:
@@ -19,4 +24,5 @@ def random_line(quote_file, index_file):
 
     return quote
 
-print(random_line("quotes.txt", "indices.idx"))
+if __name__ == "__main__":
+    print(random_line(QUOTE_FILE, INDEX_FILE))
