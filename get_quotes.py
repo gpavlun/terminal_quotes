@@ -6,6 +6,9 @@ def random_line(quote_file, index_file):
         i.seek(-8, 2)
         size = i.read(8)
         quotes = int.from_bytes(size, byteorder="big", signed=False)
+        if (quotes == 0):
+            # no quotes in file would cause later steps to crash
+            raise ValueError("quotes file has no quotes")
         # then chose a random quote to go get
         target = random.randrange(0, quotes)
         # figure out where in the quote file it is
