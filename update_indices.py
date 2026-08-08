@@ -8,4 +8,5 @@ with open("indices.idx", "wb") as index_file:
         index_file.write(size)
         total_len += len(line)
     index_file.write(len(quotes).to_bytes(8, byteorder="big", signed=False))
+    # last line of indices.idx is number of quotes in quotes.txt
 print("Done")
