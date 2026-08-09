@@ -8,5 +8,5 @@ in the public domain in the United States.
 
 ## Sources for quotes
 Meditations:
-https://www.gutenberg.org/files/2680/2680-h/2680-h.htm
+https://www.gutenberg.org/files/2680/2680-h/2680-h.htm  
 King James Bible: Public Domain (US)
