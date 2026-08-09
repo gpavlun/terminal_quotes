@@ -8,5 +8,9 @@ in the public domain in the United States.
 
 ## Sources for quotes
 Meditations:
-https://www.gutenberg.org/files/2680/2680-h/2680-h.htm  
-King James Bible: Public Domain (US)
+https://www.gutenberg.org/files/2680/2680-h/2680-h.htm
+(translated by J. Boulton and David Widger)  
+King James Bible: Public Domain (US)  
+The Art of War: 
+https://www.gutenberg.org/files/132/132-h/132-h.htm
+(translated by Lionel Giles, 1910)  
