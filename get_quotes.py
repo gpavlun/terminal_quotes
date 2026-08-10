@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import random
 from pathlib import Path
 # get directory where this script is
