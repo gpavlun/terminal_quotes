@@ -1,4 +1,5 @@
 #!/bin/sh
+set -eu
 
 # Find path to repo
 REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
