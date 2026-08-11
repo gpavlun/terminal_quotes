@@ -52,7 +52,7 @@ printf "Detected shell: %s with startup file %s\n" "$USER_SHELL" "$STARTUP_FILE"
 touch "$STARTUP_FILE"
 
 MARKER_START="# --- Quote Generator ---"
-MARKER_END="# -------------------------------"
+MARKER_END="# --- Quote Generator End ---"
 
 if grep -q "$COMMAND_LINE" "$STARTUP_FILE"; then
     printf "Quote generator command already present in startup file.\n"

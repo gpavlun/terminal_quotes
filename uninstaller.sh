@@ -7,20 +7,25 @@ EXECUTABLE_NAME="get_quotes"
 LINK_PATH="$BIN_DIR/$EXECUTABLE_NAME"
 
 MARKER_START="# --- Quote Generator ---"
-MARKER_END="# -------------------------------"
+MARKER_END="# --- Quote Generator End ---"
 
 printf "Uninstalling quote generator script...\n"
 
-# Clean up RC configuration files across common shells
+# Clean up startup configuration files across common shells
 STARTUP_FILES="$HOME/.bashrc $HOME/.zshrc $HOME/.profile $HOME/.config/fish/config.fish"
 
 for STARTUP_FILE in $STARTUP_FILES; do
-    if [ -f "$STARTUP_FILE" ] && grep -q "$MARKER_START" "$STARTUP_FILE"; then
-        printf "Removing entry from %s...\n" "$STARTUP_FILE"
+    if [ -f "$STARTUP_FILE" ]; then
+        printf "%s found, cleaning up...\n" "$STARTUP_FILE"
         TMP_FILE="${STARTUP_FILE}.tmp"
-
-        # Safely filter out the marker block using standard sed into a temp file
-        sed "/$MARKER_START/,/$MARKER_END/d" "$STARTUP_FILE" > "$TMP_FILE" && mv "$TMP_FILE" "$STARTUP_FILE"
+        if grep -q "$MARKER_START" "$STARTUP_FILE" && grep -q "$MARKER_END" "$STARTUP_FILE"; then
+            # Safe to use range deletion
+            sed "/$MARKER_START/,/$MARKER_END/d" "$STARTUP_FILE" > "$TMP_FILE" && mv "$TMP_FILE" "$STARTUP_FILE"
+        else
+            # Fallback: remove any single lines matching markers or command
+            grep -v -E -e "$MARKER_START" -e "$MARKER_END" -e "^[[:space:]]*get_quotes[[:space:]]*$" \
+            "$STARTUP_FILE" > "$TMP_FILE" && mv "$TMP_FILE" "$STARTUP_FILE"
+        fi
     fi
 done
 
