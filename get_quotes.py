@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
-import random
 from pathlib import Path
+import random
+from shutil import get_terminal_size as get_terminal_size
+import textwrap
 # get directory where this script is
 BASE_DIR = Path(__file__).resolve().parent
 QUOTE_FILE = BASE_DIR / "quotes.txt"
@@ -26,4 +28,9 @@ def random_line(quote_file, index_file):
     return quote
 
 if __name__ == "__main__":
-    print(random_line(QUOTE_FILE, INDEX_FILE))
+    quote = random_line(QUOTE_FILE, INDEX_FILE)
+    # get width of terminal; assume 80 if can't get answer
+    terminal_width = get_terminal_size(fallback=(80, 24)).columns
+    # wrap quote so no words wrapped across multiple lines
+    wrapped_quote = textwrap.fill(quote, width=terminal_width)
+    print(wrapped_quote)
