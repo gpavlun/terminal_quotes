@@ -17,3 +17,6 @@ https://www.gutenberg.org/files/132/132-h/132-h.htm
 Havamal:
 https://en.wikisource.org/wiki/The_Poetic_Edda_(tr._Bellows)/Hovamol
 (translated by Henry Addams Bellows, 1923)  
+Nicomachean Ethics:
+https://www.gutenberg.org/files/8438/8438-h/8438-h.htm
+(translated by D.P. Chase)  
