@@ -10,7 +10,8 @@ from works that are in the public domain in the United States.
 Meditations:
 https://www.gutenberg.org/files/2680/2680-h/2680-h.htm
 (translated by J. Boulton and David Widger)  
-King James Bible: Public Domain (US)  
+King James Bible (KJV): Public Domain (US)  
+Revised Version 1885 Bible (RV): Public Domain (US)  
 The Art of War: 
 https://www.gutenberg.org/files/132/132-h/132-h.htm
 (translated by Lionel Giles, 1910)  
