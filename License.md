@@ -21,3 +21,7 @@ https://en.wikisource.org/wiki/The_Poetic_Edda_(tr._Bellows)/Hovamol
 Nicomachean Ethics:
 https://www.gutenberg.org/files/8438/8438-h/8438-h.htm
 (translated by D.P. Chase)  
+Analects:
+https://www.gutenberg.org/cache/epub/46389/pg46389-images.html and
+https://www.gutenberg.org/cache/epub/3330/pg3330-images.html
+(translated by Lionel Giles and James Legge, respectively)  
