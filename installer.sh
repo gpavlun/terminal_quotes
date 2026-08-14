@@ -57,6 +57,22 @@ MARKER_END="# --- Quote Generator End ---"
 if grep -q "$COMMAND_LINE" "$STARTUP_FILE"; then
     printf "Quote generator command already present in startup file.\n"
 else
+
+# ===== G-reg PR =====
+    printf "Checking %s for .local/bin\n" "$STARTUP_FILE"
+    if ! grep -qF '.local/bin' "$STARTUP_FILE"; then
+        printf "Warning: ~/.local/bin is not in your PATH"
+        printf "Add it to PATH? [y/N]"
+	read -r answer
+
+	case  "$answer" in y|Y)
+            printf 'export PATH="$HOME/.local/bin:$PATH\n"' >> "$STARTUP_FILE"
+            printf "Added ~/.local/bin to PATH.\n"
+	    ;;
+        esac
+    fi
+# ===== end PR =====
+
     printf "Appending startup command to %s...\n" "$STARTUP_FILE"
     {
         printf "\n"
